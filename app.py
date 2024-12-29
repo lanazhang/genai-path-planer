@@ -5,10 +5,12 @@ from PyPDF2 import PdfReader
 import json
 import boto3
 
-pool_id = os.environ.get("COGNITIO_POOL_ID")
-app_client_id = os.environ.get("COGNITIO_APP_CLIENT_ID")
+pool_id = st.secrets["COGNITIO_POOL_ID"] 
+app_client_id = st.secrets["COGNITIO_APP_CLIENT_ID"]
+aws_key = st.secrets["AWS_KEY"]
+aws_secret = st.secrets["AWS_SECRET"]
 
-bedrock_runtime = boto3.client('bedrock-runtime')
+bedrock_runtime = boto3.client('bedrock-runtime',aws_access_key_id=aws_key,aws_secret_access_key=aws_secret)
 
 if pool_id and app_client_id:
     app_client_secret = os.environ.get("COGNITIO_APP_CLIENT_SECRET", None)
