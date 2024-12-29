@@ -6,8 +6,8 @@ This is a Streamlit web application that leverages Amazon Cognito for user authe
 ## Start the app
 ### Clone source code to your local drive
 ```
-git clone https://github.com/aws-samples/aws-genai-audio-text-chat-moderation
-cd aws-genai-audio-text-chat-moderation
+git clone https://github.com/lanazhang/genai-path-planer
+cd genai-path-planer
 ```
 ### Create Python Virtual Environment
 ```
