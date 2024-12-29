@@ -7,7 +7,6 @@ import boto3
 
 pool_id = os.environ.get("COGNITIO_POOL_ID")
 app_client_id = os.environ.get("COGNITIO_APP_CLIENT_ID")
-#openai.api_key = os.environ.get("CHATGPT_API_KEY")
 
 bedrock_runtime = boto3.client('bedrock-runtime')
 
