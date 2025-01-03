@@ -26,7 +26,6 @@ anthropic = Anthropic(
     api_key=""
 )
 anthropic_model_id = "claude-3-5-sonnet-latest"
-
  
 # Authenticate user
 if pool_id and app_client_id:
@@ -109,7 +108,6 @@ def call_anthopric(model_id, messages):
         ],
         model=model_id,
     )
-    print(response)
     return response
 
 if __name__ == "__main__":
@@ -190,8 +188,8 @@ if __name__ == "__main__":
             with st.spinner('Evaluating...'):
                 #response = call_openai(openai_model_id, messages)
                 #response = call_bedrock(bedrock_model_id, messages)
-                response = call_anthopric(anthropic_model_id, anthropic_prompts)
+                response = call_anthopric(anthropic_model_id,anthropic_prompts)
                 
-                st.write(response)
+                st.write(response.content[0].text)
 
 
